@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 16% 6%;
+    --foreground: 210 20% 95%;
+
+    --card: 220 14% 10%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 220 14% 10%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 142 72% 45%;
+    --primary-foreground: 220 16% 6%;
+
+    --secondary: 220 14% 14%;
+    --secondary-foreground: 210 20% 85%;
+
+    --muted: 220 14% 16%;
+    --muted-foreground: 215 15% 55%;
+
+    --accent: 142 72% 45%;
+    --accent-foreground: 220 16% 6%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 210 20% 95%;
+
+    --border: 220 14% 18%;
+    --input: 220 14% 18%;
+    --ring: 142 72% 45%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --github-green: 142 72% 45%;
+    --github-green-dim: 142 50% 30%;
+    --code-bg: 220 14% 8%;
+    --glow-primary: 0 0 40px hsl(142 72% 45% / 0.15);
+    
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-sans: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
+
+  code, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-emerald-400;
+  }
+  
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+  
+  .border-glow {
+    @apply border border-primary/30;
+    box-shadow: var(--glow-primary), inset 0 0 20px hsl(142 72% 45% / 0.05);
+  }
+}
